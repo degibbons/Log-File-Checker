@@ -1,15 +1,11 @@
 """Creates a GUI for parsing out meta log data for recording from Bruker Skyscan 1173 log files."""
 
 import os
-import pandas as pd
 import tkinter as tk
 from tkinter import ttk
 from tkinter import filedialog as fdlg
-import re
 from pathlib import Path
-import shutil
-import openpyxl
-from openpyxl.utils import get_column_letter
+import pandas as pd
 
 
 class MainWindow(tk.Tk):
@@ -361,7 +357,7 @@ class MainWindow(tk.Tk):
                                         pass
                     else:
                         print(
-                            "No Subdirectories identified in indicated directory. Please fix and try again."
+                            "No Subdirectories identified in directory. Please fix and try again."
                         )
                 archive_file = Path(self.target_archive_file)
                 wb = pd.read_excel(archive_file, sheet_name=self.sheet_name)
